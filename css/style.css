@@ -104,6 +104,7 @@ a:hover { text-decoration: underline; }
 .justify-content-between { justify-content: space-between; }
 .justify-content-around { justify-content: space-around; }
 .justify-content-center { justify-content: center; }
+.justify-content-right { justify-content: right; }
 
 .align-items-start { align-items: flex-start; }
 .align-items-center { align-items: center; }
@@ -113,15 +114,14 @@ a:hover { text-decoration: underline; }
 .list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
 }
 
 .list > .item { min-height: 100px; border: 1px solid #ddd; }
-.list > .item-33 { flex: 0 0 calc(33.333% - 0.5em); max-width: calc(33.333% - 0.5em); }
+.list > .item-33 { flex: 0 0 calc(33.333% - 0.5em); max-width: calc(33.333% - 0.5em); margin: 0.25em;}
 
-.list > .item-25 { flex: 0 0 calc(25% - 0.5em); max-width: calc(25% - 0.5em); }
-.list > .item-50 { flex: 0 0 calc(50% - 0.5em); max-width: calc(50% - 0.5em); }
-.list > .item-100 { flex: 0 0 calc(100% - 0.5em); max-width: calc(100% - 0.5em); }
+.list > .item-25 { flex: 0 0 calc(25% - 0.5em); max-width: calc(25% - 0.5em); margin: 0.25em;}
+.list > .item-50 { flex: 0 0 calc(50% - 0.5em); max-width: calc(50% - 0.5em); margin: 0.25em;}
+.list > .item-100 { flex: 0 0 calc(100% - 0.5em); max-width: calc(100% - 0.5em); margin: 0.25em;}
 
 /* /flex */
 
@@ -160,21 +160,25 @@ a:hover { text-decoration: underline; }
 
 .text-ellipsis { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-.fx-n3 { font-size: 0.8em; }
-.fx-n2 { font-size: 0.85em; }
-.fx-n1 { font-size: 0.9em; }
+.fx-n3 { font-size: 0.8em!important; }
+.fx-n2 { font-size: 0.85em!important; }
+.fx-n1 { font-size: 0.9em!important; }
 
-.fx-1 { font-size: 1em; }
-.fx-2 { font-size: 1.1em; }
-.fx-3 { font-size: 1.3em; }
-.fx-4 { font-size: 1.5em; }
-.fx-5 { font-size: 1.8em; }
+.fx-1 { font-size: 1em!important; }
+.fx-2 { font-size: 1.1em!important; }
+.fx-3 { font-size: 1.3em!important; }
+.fx-4 { font-size: 1.5em!important; }
+.fx-5 { font-size: 1.8em!important; }
 
-.fx-6 { font-size: 2.2em; }
-.fx-7{ font-size: 2.5em; }
-.fx-8 { font-size: 2.8em; }
-.fx-9 { font-size: 3.2em; }
+.fx-6 { font-size: 2.2em!important; }
+.fx-7{ font-size: 2.5em!important; }
+.fx-8 { font-size: 2.8em!important; }
+.fx-9 { font-size: 3.2em!important; }
 
+.lh-1 { line-height: 1em; }
+.lh-1-5 { line-height: 1.5em; }
+.lh-2 { line-height: 2em; }
+.lh-2-5 { line-height: 2.5em; }
 
 .text-left { text-align: left!important; }
 .text-center { text-align: center!important; }

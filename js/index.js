@@ -80,20 +80,44 @@ window.addEventListener("load", async () => {
 
 
     /**
-     * 툴팁 띄우기
+     * 툴팁 띄우기 & 다이얼 로그 띄우기
      */
+    // 다이얼 로그    
+    let eventDialog = $("#dialog-event").dialog({
+        autoOpen: false,
+        sizable: false,
+        width: 700
+    });
+
+    // 툴팁
     let toolTip = $(`<div class="tool-tip"></div>`)[0];
     let placements = await fetch("./data/placement.json").then(v => v.json());
-    console.log(placements);
+    let events = await fetch("./data/reservation.json").then(v => v.json());
     document.querySelectorAll("#events .item").forEach(x => {
+        let placeId = x.dataset.placement;
+        let eventId = x.dataset.event;
+        let placement = placements.find(p => p.id == placeId);
+        let event = events.find(evt => evt.id == eventId);
+
+        // 다이얼 로그
+        x.addEventListener("click", e => {
+            eventDialog.find(".event-name").text(event.name);
+            eventDialog.find(".placement-name").text(placement.name);
+            eventDialog.find(".score > img").src = placement.score + ".png";
+            eventDialog.find(".score > span").text(placement.score + "점");
+            eventDialog.find(".since").text(event.since);
+            eventDialog.find(".until").text(event.until);
+
+            eventDialog.dialog("open");
+        });
+
+        //툴팁
         x.addEventListener("mousemove", e => {
-            let placeId = x.dataset.placement;
             let {clientX, clientY} = e;
             toolTip.style.left = clientX + "px";
             toolTip.style.top = clientY + "px";
 
             let dayList = "일 월 화 수 목 금 토".split(" ");
-            let placement = placements.find(p => p.id == placeId);
             toolTip.innerHTML = `<div class="wx-300 pl-2 pr-2 py-2">
                                     <p class="fx-n3 text-muted mb-1">행사장 정보</p>
                                     <div class="d-flex align-items-center justify-content-between">

@@ -1,27 +1,27 @@
 window.addEventListener("load", async () => {
     // 다이얼 로그 불러오기
     let dialog = {
-        login: await fetch("/dialog__login.html")
-                .then(v => v.text())
-                .then(v => {
-                    let dialog = $(v);
-                    dialog.dialog({
-                        autoOpen: false,
-                        resizable: false,
-                        width: 480
-                    });
-                    return dialog
-                }),
-        join: await fetch("/dialog__join.html")
+        login: await fetch("./dialog__login.html")
                     .then(v => v.text())
                     .then(v => {
-                        let dialog = $(v);
-                        dialog.dialog({
+                        let $contents = $(v);
+                        $contents.dialog({
                             autoOpen: false,
                             resizable: false,
                             width: 480
                         });
-                        return dialog
+                        return $contents;
+                    }),
+        join: await fetch("./dialog__join.html")
+                    .then(v => v.text())
+                    .then(v => {
+                        let $contents = $(v);
+                        $contents.dialog({
+                            autoOpen: false,
+                            resizable: false,
+                            width: 480
+                        });
+                        return $contents;
                     }),
     }
     //  회원가입 다이얼로그 SUBMIT 이벤트
@@ -76,6 +76,7 @@ window.addEventListener("load", async () => {
 
     // 다이얼 로그 생성 이벤트
     $("#link-login").on("click", e => {
+        console.log(dialog.login)
         dialog.login.dialog("open");
     });
 
@@ -83,4 +84,12 @@ window.addEventListener("load", async () => {
         dialog.join.dialog("open");
     });
 
+
+
+    // 커스텀 파일 input
+    $(".input-file > input").on("input", function(){
+        let file = this.files.length > 0 && this.files[0];
+        if(file) $(this).prev().text(file.name);
+        else $(this).prev().text('');
+    })
 });
