@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="벡스코">
+    <meta property="og:description" content="벡스코 행사 일정을 한 눈에 알아보거나 행사장을 간편히 예약할 수 있습니다!">
+    <meta property="og:image" content="./images/open-graph.png">
+    <meta property="og:image:width" content="200">
+    <meta property="og:image:height" content="200">
+    <title>Bexco | 벡스코</title>
+    <!-- css -->
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css">
+    <!-- /css -->
+    <!-- js -->
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/slide.js"></script>
+    <!-- /js -->
+</head>
+<body>
+    <!-- HEADER -->
+    <header id="header">
+        <div class="container d-flex justify-content-between align-items-center h-100">
+            <a href="./index.html" class="logo hover-grayscale border-sm-none">
+                <img src="./images/logo.png" alt="벡스코" height="70">
+            </a>
+            <nav id="nav" class="d-sm-none">
+                <div class="nav-item"><a href="./index.html">BEXCO</a></div>
+                <div class="nav-item"><a href="./reservation_placement.html">행사장 임대</a></div>
+                <div class="nav-item"><a href="./reservation_transportation.html">교통편 예약</a></div>
+                <div class="nav-item"><a href="./admin_venue.html">관리자 접속</a></div>
+            </nav>
+            <div class="other fx-n2 d-sm-none">
+                <a id="link-login" href="#" class="px-2">로그인</a>
+                <a id="link-join" href="#" class="px-2 ml-3">회원가입</a>
+            </div>
+            
+            <!-- MOBILE NAV -->
+            <form class="d-none d-sm-block">
+                <input type="checkbox" id="nav-open" hidden>
+                <label for="nav-open" class="mr-3 icon d-none d-sm-block fx-3 position-relative">
+                    <img src="./images/icons/menu.png" alt="메뉴">
+                </label>
+                <div id="m-nav">
+                    <div class="m-nav-inner">
+                        <nav class="nav">
+                            <div class="nav-item hover-opacity"><a href="./index.html">BEXCO</a></div>
+                            <div class="nav-item hover-opacity"><a href="./reservation_placement.html">행사장 임대</a></div>
+                            <div class="nav-item hover-opacity"><a href="./reservation_transportation.html">교통편 예약</a></div>
+                            <div class="nav-item hover-opacity"><a href="./admin_venue.html">관리자 접속</a></div>
+                        </nav>
+                        <div class="other fx-n2 mt-4 fx-2">
+                            <a href="#" class="px-2 hover-opacity">로그인</a>
+                            <a href="#" class="px-2 hover-opacity ml-3">회원가입</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- /MOBILE NAV -->
+        </div>
+    </header>
+    <!-- /HEADER -->
+
+    <!-- VISUAL -->
+    <div id="visual">
+        <div class="images">
+            <div data-idx="0"></div>
+            <div data-idx="1"></div>
+            <div data-idx="2"></div>
+        </div>
+        <div class="visual-contents">
+            <div>
+                <div class="text">
+                    <p>고객의 꿈을 실현하는 글로벌 MICE 플랫폼</p>     
+                    <h1 lang="en">BEXCO</h1>
+                </div>
+                <div class="remote mt-4 justify-content-between">
+                    <div class="buttons">
+                        <span id="prev-icon" class="icon hover-grayscale icon-circle fx-n2 mr-1"><img src="./images/icons/slide-left.png" alt="슬라이드 움직이기"></span>
+                        <span id="next-icon" class="icon hover-grayscale icon-circle fx-n2"><img src="./images/icons/slide-right.png" alt="슬라이드 움직이기"></span>
+                    </div>
+                    <div class="circles ml-3">
+                        <span data-idx="0" class="active"></span>
+                        <span data-idx="1"></span>
+                        <span data-idx="2"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a id="to-bottom" href="#about" class="icon icon-circle filter-whitescale hover-opacity">
+            <img class="animate-down" src="./images/icons/to-bottom.png" alt="to-bottom">
+        </a>
+    </div>
+    <!-- /VISUAL -->
+
+    <!-- ABOUT -->
+    <div id="about">
+        <div class="container padding-lg text-center fx-sm-n1">
+            <div class="fx-3">
+                <p class="text-gray">아시아 최고의 전시·컨벤션 센터로</p>
+                <p class="bold text-black">자리매김하는 '벡스코'</p>
+            </div>
+            <p class="text-black mt-5 fx-2 w-75 mx-auto">지난 2001년 5월 해운대라는 대한민국 최고의 관광명소에서 개관한 벡스코는 해마다 행사개최 기록을 갱신해가며 
+                매머드급 국제전시회와 국제회의는 물론 중소 규모 회의와 기업행사 등 이벤트에 이르기까지 다양한 규모와 성격의 
+                전시컨벤션 행사를 성공적으로 개최하고 있으며, 이를 기반으로 ‘아시아 최고의 전시·컨벤션 허브’로 자리매김해 나가고 있습니다.</p>
+        </div>
+    </div>
+    <!-- /ABOUT -->
+
+    <div class="split-image">
+        <img src="./images/split/01.jpg" alt="영역 나누는 이미지">
+    </div>
+    
+    <!-- EVENTS -->
+    <div id="events" class="bg-gray fx-sm-n1">
+        <div class="container padding">
+            <div class="text-center mt-5">
+                <span class="fx-4 text-black bold" lang="en">금월 진행 행사</span>
+                <p class="mt-2 text-gray">이번 달의 진행 예정인 행사를 살펴보세요</p>
+            </div>
+            <div class="list mt-5 pt-5">
+                <div class="item item-33 item-sm-100 my-sm-1 box-shadow">
+                    <div class="image w-100 hx-200">
+                        <img class="image-cover" src="./images/placement/01.jpg" alt="">
+                    </div>
+                    <div class="info px-2 py-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="bold fx-2 text-black">제3회 대학생 동아리 한마당</div>
+                        </div>
+                        <div class="text-gray mt-1">과천세리움</div>
+                        <div class="text-gray mt-3 fx-n1">
+                            <span class="mr-1 bold">대여일시</span>
+                            2020-03-16 ~ 2020-03-19
+                        </div>
+                        <div class="text-gray mt-2 fx-n1">
+                            <span class="mr-1 bold">예약일시</span>
+                            2020-02-01
+                        </div>
+                    </div>
+                </div>
+                <div class="item item-33 item-sm-100 my-sm-1 box-shadow">
+                    <div class="image w-100 hx-200">
+                        <img class="image-cover" src="./images/placement/04.jpg" alt="">
+                    </div>
+                    <div class="info px-2 py-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="bold fx-2 text-black">제3회 산업대제전</div>
+                        </div>
+                        <div class="text-gray mt-1">팔거천</div>
+                        <div class="text-gray mt-3 fx-n1">
+                            <span class="mr-1 bold">대여일시</span>
+                            2020-03-20 ~ 2020-03-22
+                        </div>
+                        <div class="text-gray mt-2 fx-n1">
+                            <span class="mr-1 bold">예약일시</span>
+                            2020-03-01
+                        </div>
+                    </div>
+                </div>
+                <div class="item item-33 item-sm-100 my-sm-1 box-shadow">
+                    <div class="image w-100 hx-200">
+                        <img class="image-cover" src="./images/placement/04.jpg" alt="">
+                    </div>
+                    <div class="info px-2 py-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="bold fx-2 text-black">제1회 E스포츠 페스티벌</div>
+                        </div>
+                        <div class="text-gray mt-1">유니언타운</div>
+                        <div class="text-gray mt-3 fx-n1">
+                            <span class="mr-1 bold">대여일시</span>
+                            2020-03-30 ~ 2020-04-05
+                        </div>
+                        <div class="text-gray mt-2 fx-n1">
+                            <span class="mr-1 bold">예약일시</span>
+                            2020-03-02
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /EVENTS -->
+
+
+    <!-- FOOTER -->
+
+    <footer id="footer">
+        <div class="top">
+            <div class="container hx-50 d-flex justify-content-between align-items-center px-2">
+                <div class="d-flex align-items-center fx-n1 text-light justify-content-sm-center h-100">
+                    <div class="nav-item"><a href="./index.html">BEXCO</a></div>
+                    <div class="split"></div>
+                    <div class="nav-item"><a href="./reservation_placement.html">행사장 임대</a></div>
+                    <div class="split"></div>
+                    <div class="nav-item"><a href="./reservation_transportation.html">교통편 예약</a></div>
+                    <div class="split"></div>
+                    <div class="nav-item"><a href="./admin_venue.html">관리자 접속</a></div>
+                </div>
+                <div class="d-flex align-items-center h-100">
+                    <span class="hover-grayscale icon"><img src="./images/socials/Facebook.png" alt=""></span>
+                    <span class="hover-grayscale icon ml-1"><img src="./images/socials/Twitter.png" alt=""></span>
+                    <span class="hover-grayscale icon ml-1"><img src="./images/socials/Tumblr.png" alt=""></span>
+                </div>
+            </div>
+        </div>
+        <div class="container py-2">
+            <div class="d-flex justify-content-between text-light">
+                <div class="left d-flex align-items-center flex-sm-column w-100 px-sm-5">
+                    <img class="filter-whitescale mr-5 mr-sm-0 mb-sm-3" src="./images/logo.png" alt="벡스코" height="60">
+                    <div>
+                        <p class="fx-n3 d-sm-flex flex-wrap justify-content-sm-center">
+                            <span class="mr-2">부산광역시 해운대구 APEC로 55 (우 48060)</span>
+                            <span class="mr-2">TEL. 051-740-7300</span>
+                            <span class="mr-2">FAX. 051-740-7320 </span>
+                            <span>E-mail. bexco@bexco.co.kr</span>
+                        </p>
+                        <p class="fx-n3 mt-1 text-sm-center">Copyright (c) 2013 BEXCO. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- /FOOTER -->
+</body>
+</html>

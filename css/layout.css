@@ -1,0 +1,323 @@
+@charset "UTF-8";
+
+/* custom */
+
+.button {
+    padding: 0.5em 1.5em;
+    border: 1px solid #d81b44;
+    color: #d81b44;
+}
+
+.button:hover { background-color: #d81b44; color: #fff; transition: 0.3s; }
+
+
+.custom-checkbox {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+
+    transition: 0.5s;
+    border: #ef3d4a solid 3px;
+}
+
+.custom-checkbox:hover {
+    background-color: #ef3d4a;
+}
+
+input[type="checkbox"]:checked + .custom-checkbox {
+    background-color: #ef3d4a;
+    transform: rotate(45deg) scale(0.7);
+}
+
+
+input[type="email"].form-control, input[type="password"].form-control,
+input[type="text"].form-control, textarea.form-control {
+    display: block;
+    border: 1px solid #ddd;
+    width: 100%;
+    height: 2em;
+    padding: 0.3em 0.5em;
+    margin: 0.3em 0;
+    font-size: 16px;
+}
+
+/* /custom */
+
+
+/* header */
+
+#header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid #fff5;
+    z-index: 1000;
+}
+
+#header .logo {
+    border-right: 1px solid #fff5;
+    padding-right: 50px;
+}
+
+#nav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+#nav .nav-item {
+    height: 100%;
+    line-height: 80px;
+    padding: 0 30px;
+    color: #ddd;
+    transition: 0.3s;
+}
+#nav .nav-item:hover { color: #fff; }
+
+#nav a {
+    position: relative; 
+    padding-bottom: 0.5em;
+}
+#nav a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 0;
+    height: 1px;
+    background-color: #fff;
+    transition: 0.3s;
+}
+#nav .nav-item:hover a::after { width: 100%; }
+#nav a:hover { text-decoration: none; }
+
+
+
+#header > div > .other {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-left: 30px;
+    border-left: 1px solid #fff5;
+    color: #ddd;
+}
+
+#header .other a:hover { color: #fff; }
+
+/* /header */
+
+
+/* visual */
+
+#visual {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#visual .images, #visual .images > div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#visual .images > div { 
+    background-size: cover;
+    background-position: center center;    
+    background-repeat: no-repeat;
+    background-color: #310a15;
+    background-blend-mode: lighten;
+    filter: brightness(70%);
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+}
+
+#visual .images > div:nth-child(1) { background-image: url(../images/slides/1.jpg); transform: translateX(0); z-index: 1; }
+#visual .images > div:nth-child(2) { background-image: url(../images/slides/2.jpg); filter: brightness(50%); }
+#visual .images > div:nth-child(3) { background-image: url(../images/slides/3.jpg); }
+
+
+#visual .visual-contents {
+    position: relative;
+    text-align: center;
+    transform: translateY(-50%);
+    top: 50%;
+    margin: 0 auto;
+    overflow: hidden;
+    z-index: 100;
+}
+
+#visual .text {
+    color: #fffd;
+    line-height: 1em;
+}
+
+#visual .text h1 {
+    color: #fff;
+    font-weight: 900;
+    font-size: 5.2em;
+    line-height: 1em;
+}
+
+
+#visual .remote {
+    margin: 0 auto;
+    width: 380px;
+    height: 50px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+#visual .remote .circles {
+    width: calc(10px * 3 + 10px * 2);
+    height: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#visual .remote .circles span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #fffa;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#visual .remote .circles span:hover { border-color: #d3225d; }
+#visual .remote .circles span.active { background-color: #fff; }
+#visual .remote .circles span.active:hover { background-color: #d3225d; }
+
+#visual #to-bottom {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+
+#visual.sub-page { height: 400px; }
+#visual.sub-page .visual-contents { position: absolute; top: 50%; margin: 40px 0 0 0; left: 50%; transform: translate(-50%, -50%); }
+
+/* /visual */
+
+/* footer */
+
+#footer {
+    background-color: rgb(40, 41, 44);
+}
+
+#footer .top { border-bottom: 1px solid #111; }
+
+/* /footer */
+
+
+/* mobile-nav */
+#m-nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000a;
+    z-index: 1001;
+
+    pointer-events: none;
+    transform: translateY(-100%);
+    transition: 0.3s;
+    opacity: 0;
+}
+
+#m-nav .m-nav-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    width: 80%;
+    margin: 20vh auto;
+}
+
+#m-nav .nav {
+    font-size: 1.3em;
+    text-align: center;
+}
+
+#m-nav .nav-item {
+    margin: 20px 0;
+}
+
+
+#nav-open:checked + label {
+    z-index: 1002;
+}
+
+#nav-open:checked ~ #m-nav {
+    transform: translateY(0);
+    pointer-events: all;
+    transition: 0.5s;
+    opacity: 1;
+}
+
+/* /mobile-nav */
+
+
+/* reservation_transportation */
+
+.transport-table {
+    width: 100%;
+}
+
+.transport-table .thead { height: 50px; border-bottom: 1px solid #bbb; }
+.transport-table .titem { color: #555; min-height: 100px; padding: 20px 0; border-bottom: 1px solid #ddd; }
+.transport-table .titem.disabled { opacity: 0.6; pointer-events: none; }
+.transport-table .titem:hover { background-color: #f8f8f8; }
+.transport-table .thead, .transport-table .titem {
+    width: 100%;
+    display: flex;
+}
+
+.transport-table .tdata {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transport-table .checkbox, .transport-table .price,
+.transport-table .rest, .transport-table .cycle,
+.transport-table .interval, .transport-table .status {
+    max-width: 11.666%;
+    flex: 0 0 11.666%;
+}
+
+.transport-table .info { max-width: 30%; flex: 0 0 30%; }
+
+.transport-table .item .info { justify-content: left; }
+
+.transport-table .success, .transport-table .error {
+    font-size: 0.8em;
+    padding: 0.5em 0;
+    text-align: center;
+    width: 5.5em;
+    border-radius: 50px;
+    color: #fff;
+}
+
+.transport-table .success { background-color: #275aca; }
+.transport-table .error { background-color: #d81b44; }
+
+/* /reservation_transportation */
+
+
+
+/* login */
+/* /login */

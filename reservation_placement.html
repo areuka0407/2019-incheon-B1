@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="벡스코">
+    <meta property="og:description" content="벡스코 행사 일정을 한 눈에 알아보거나 행사장을 간편히 예약할 수 있습니다!">
+    <meta property="og:image" content="./images/open-graph.png">
+    <meta property="og:image:width" content="200">
+    <meta property="og:image:height" content="200">
+    <title>Bexco | 벡스코</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <script src="js/common.js"></script>
+</head>
+<body>
+    <!-- HEADER -->
+    <header id="header">
+        <div class="container d-flex justify-content-between align-items-center h-100">
+            <a href="./index.html" class="logo hover-grayscale border-sm-none">
+                <img src="./images/logo.png" alt="벡스코" height="70">
+            </a>
+            <nav id="nav" class="d-sm-none">
+                <div class="nav-item"><a href="./index.html">BEXCO</a></div>
+                <div class="nav-item"><a href="./reservation_placement.html">행사장 임대</a></div>
+                <div class="nav-item"><a href="./reservation_transportation.html">교통편 예약</a></div>
+                <div class="nav-item"><a href="./admin_venue.html">관리자 접속</a></div>
+            </nav>
+            <div class="other fx-n2 d-sm-none">
+                <a id="link-login" href="#" class="px-2">로그인</a>
+                <a id="link-join" href="#" class="px-2 ml-3">회원가입</a>
+            </div>
+            
+            <!-- MOBILE NAV -->
+            <form class="d-none d-sm-block">
+                <input type="checkbox" id="nav-open" hidden>
+                <label for="nav-open" class="mr-3 icon d-none d-sm-block fx-3 position-relative">
+                    <img src="./images/icons/menu.png" alt="메뉴">
+                </label>
+                <div id="m-nav">
+                    <div class="m-nav-inner">
+                        <nav class="nav">
+                            <div class="nav-item hover-opacity"><a href="./index.html">BEXCO</a></div>
+                            <div class="nav-item hover-opacity"><a href="./reservation_placement.html">행사장 임대</a></div>
+                            <div class="nav-item hover-opacity"><a href="./reservation_transportation.html">교통편 예약</a></div>
+                            <div class="nav-item hover-opacity"><a href="./admin_venue.html">관리자 접속</a></div>
+                        </nav>
+                        <div class="other fx-n2 mt-4 fx-2">
+                            <a href="#" class="px-2 hover-opacity">로그인</a>
+                            <a href="#" class="px-2 hover-opacity ml-3">회원가입</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- /MOBILE NAV -->
+        </div>
+    </header>
+    <!-- /HEADER -->
+
+    <!-- VISUAL -->
+    <div id="visual" class="sub-page">
+        <div class="images">
+            <div></div>
+        </div>
+        <div class="visual-contents">
+            <div>
+                <div class="text">
+                    <p>BEXCO > 행사장 임대</p> 
+                    <p class="fx-5 light" lang="en">Placement <span class="fx-2 bold">Reservation</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /VISUAL -->
+
+    <!-- RESERVE -->
+    <div id="reserve-placement">
+        <div class="container padding px-2">
+            <div>
+                <p class="fx-3">행사장 임대 목록</p>
+                <p class="mt-1 light">현재 임대가 가능한 행사장 목록입니다.</p>
+            </div>
+            <div class="list mt-4">
+                <div class="item item-33 item-sm-100 hover-opacity-reverse pointer mt-2">
+                    <div class="w-100 hx-250">
+                        <img class="image-cover" src="./images/placement/01.jpg" alt="행사장 이미지">
+                    </div>
+                    <div class="pl-2 pr-2 py-2">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span class="text-black bold fx-2">제 1 행사장</span>
+                            <div class="score d-flex align-items-center">
+                                <img src="./images/scores/4.5.png" alt="4.5" height="20">
+                                <span class="fx-n2 text-red ml-1">4.5점</span>
+                            </div>
+                        </div>
+                        <p class="mt-2 text-muted fx-n2 d-flex flex-wrap">
+                            <span class="mr-2">임대료(1일): 5,000 만원</span>
+                            <span class="mr-2">일요일 휴무</span>
+                        </p>
+                        <p class="text-gray fx-n1 mt-1">
+                            26,508㎡의 전시장으로 전문전시회, 대형회의, 각종 이벤트, 스포츠행사, 초대형기업행사 등이 가능합니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="item item-33 item-sm-100 hover-opacity-reverse pointer mt-2">
+                    <div class="w-100 hx-250">
+                        <img class="image-cover" src="./images/placement/02.jpg" alt="행사장 이미지">
+                    </div>
+                    <div class="pl-2 pr-2 py-2">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span class="text-black bold fx-2">제 2 행사장</span>
+                            <div class="score d-flex align-items-center">
+                                <img src="./images/scores/4.5.png" alt="4.5" height="20">
+                                <span class="fx-n2 text-red ml-1">4.5점</span>
+                            </div>
+                        </div>
+                        <p class="mt-2 text-muted fx-n2 d-flex flex-wrap">
+                            <span class="mr-2">임대료(1일): 3,500 만원</span>
+                            <span class="mr-2">월, 화요일 휴무</span>
+                        </p>
+                        <p class="text-gray fx-n1 mt-1">
+                            19,872㎡의 전시장과 1,512㎡의 회의실로 전문전시회, 대형회의, 각종 이벤트, 스포츠행사, 초대형기업행사 등이 가능합니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="item item-33 item-sm-100 hover-opacity-reverse pointer mt-2">
+                    <div class="w-100 hx-250">
+                        <img class="image-cover" src="./images/placement/03.jpg" alt="행사장 이미지">
+                    </div>
+                    <div class="pl-2 pr-2 py-2">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span class="text-black bold fx-2">오디토리움</span>
+                            <div class="score d-flex align-items-center">
+                                <img src="./images/scores/3.png" alt="3" height="20">
+                                <span class="fx-n2 text-red ml-1">3점</span>
+                            </div>
+                        </div>
+                        <p class="mt-2 text-muted fx-n2 d-flex flex-wrap">
+                            <span class="mr-2">임대료(1일): 2,500 만원</span>
+                            <span class="mr-2">목, 금요일 휴무</span>
+                        </p>
+                        <p class="text-gray fx-n1 mt-1">
+                            대규모 회의, 각종 이벤트, 문화공연이 가능한 벡스코 오디토리움입니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="item item-33 item-sm-100 hover-opacity-reverse pointer mt-2">
+                    <div class="w-100 hx-250">
+                        <img class="image-cover" src="./images/placement/04.jpg" alt="행사장 이미지">
+                    </div>
+                    <div class="pl-2 pr-2 py-2">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span class="text-black bold fx-2">컨벤션홀</span>
+                            <div class="score d-flex align-items-center">
+                                <img src="./images/scores/3.5.png" alt="3.5" height="20">
+                                <span class="fx-n2 text-red ml-1">3.5점</span>
+                            </div>
+                        </div>
+                        <p class="mt-2 text-muted fx-n2 d-flex flex-wrap">
+                            <span class="mr-2">임대료(1일): 5,000 만원</span>
+                            <span class="mr-2">토, 일요일 휴무</span>
+                        </p>
+                        <p class="text-gray fx-n1 mt-1">
+                            26,508㎡의 전시장으로 전문전시회, 대형회의, 각종 이벤트, 스포츠행사, 초대형기업행사 등이 가능합니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="item item-33 item-sm-100 hover-opacity-reverse pointer mt-2">
+                    <div class="w-100 hx-250">
+                        <img class="image-cover" src="./images/placement/05.jpg" alt="행사장 이미지">
+                    </div>
+                    <div class="pl-2 pr-2 py-2">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span class="text-black bold fx-2">누리마루</span>
+                            <div class="score d-flex align-items-center">
+                                <img src="./images/scores/5.png" alt="5" height="20">
+                                <span class="fx-n2 text-red ml-1">5점</span>
+                            </div>
+                        </div>
+                        <p class="mt-2 text-muted fx-n2 d-flex flex-wrap">
+                            <span class="mr-2">임대료(1일): 1,500 만원</span>
+                            <span class="mr-2">토요일 휴무</span>
+                        </p>
+                        <p class="text-gray fx-n1 mt-1">
+                            “누리마루 APEC하우스”는 순수 우리말인 누리(세계) 마루(정상)와 APEC 회의장소인 APEC하우스를 조합한 명칭으로 “세계 정상들이 모여 APEC회의를 개최한 장소”라는 의미를 지니고 있다.
+                        </p>
+                    </div>
+                </div>
+                <div class="item item-33 item-sm-100 hover-opacity-reverse pointer mt-2">
+                    <div class="w-100 hx-250">
+                        <img class="image-cover" src="./images/placement/04.jpg" alt="행사장 이미지">
+                    </div>
+                    <div class="pl-2 pr-2 py-2">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span class="text-black bold fx-2">유니언타운</span>
+                            <div class="score d-flex align-items-center">
+                                <img src="./images/scores/1.png" alt="1" height="20">
+                                <span class="fx-n2 text-red ml-1">1점</span>
+                            </div>
+                        </div>
+                        <p class="mt-2 text-muted fx-n2 d-flex flex-wrap">
+                            <span class="mr-2">임대료(1일): 6,500 만원</span>
+                            <span class="mr-2">일, 화요일 휴무</span>
+                        </p>
+                        <p class="text-gray fx-n1 mt-1">
+                            첨단 인텔리전트 시스템 및 IT 인프라를 두루 갖추었습니다 또한 최고의 전시-문화-관광의 명소로서 쾌적한 환경을 제공합니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /RESERVE -->
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="top">
+            <div class="container hx-50 d-flex justify-content-between align-items-center px-2">
+                <div class="d-flex align-items-center fx-n1 text-light justify-content-sm-center h-100">
+                    <div class="nav-item"><a href="./index.html">BEXCO</a></div>
+                    <div class="split"></div>
+                    <div class="nav-item"><a href="./reservation_placement.html">행사장 임대</a></div>
+                    <div class="split"></div>
+                    <div class="nav-item"><a href="./reservation_transportation.html">교통편 예약</a></div>
+                    <div class="split"></div>
+                    <div class="nav-item"><a href="./admin_venue.html">관리자 접속</a></div>
+                </div>
+                <div class="d-flex align-items-center h-100">
+                    <span class="hover-grayscale icon"><img src="./images/socials/Facebook.png" alt=""></span>
+                    <span class="hover-grayscale icon ml-1"><img src="./images/socials/Twitter.png" alt=""></span>
+                    <span class="hover-grayscale icon ml-1"><img src="./images/socials/Tumblr.png" alt=""></span>
+                </div>
+            </div>
+        </div>
+        <div class="container py-2">
+            <div class="d-flex justify-content-between text-light">
+                <div class="left d-flex align-items-center flex-sm-column w-100 px-sm-5">
+                    <img class="filter-whitescale mr-5 mr-sm-0 mb-sm-3" src="./images/logo.png" alt="벡스코" height="60">
+                    <div>
+                        <p class="fx-n3 d-sm-flex flex-wrap justify-content-sm-center">
+                            <span class="mr-2">부산광역시 해운대구 APEC로 55 (우 48060)</span>
+                            <span class="mr-2">TEL. 051-740-7300</span>
+                            <span class="mr-2">FAX. 051-740-7320 </span>
+                            <span>E-mail. bexco@bexco.co.kr</span>
+                        </p>
+                        <p class="fx-n3 mt-1 text-sm-center">Copyright (c) 2013 BEXCO. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- /FOOTER -->
+</body>
+</html>

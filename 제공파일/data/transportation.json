@@ -1,0 +1,154 @@
+{
+    "transportation": [
+        {
+            "id": 1,
+            "name": "고속 버스 1번",
+            "description": "먼 이동기간동안 당신의 여행 파트너가 되어줄 고속 버스입니다.",
+            "interval": 30,
+            "cycle": ["06:00", "22:00"],
+            "rest": [0, 3, 6],
+            "price": 12000,
+            "limit": 40
+        },
+        {
+            "id": 2,
+            "name": "KTX 관광 에디션",
+            "description": "당신의 완벽한 관광을 도와줄 코레일의 관광 파트너, KTX 관광 에디션입니다.",
+            "interval": 90,
+            "cycle": ["06:00", "20:00"],
+            "rest": [1, 2],
+            "price": 78000,
+            "limit": 80
+        },
+        {
+            "id": 3,
+            "name": "Air Busan Festival Edition",
+            "description": "럭셔리한 항공편으로 주요 국가 및 주요 도시에서 부산으로 간편하게 이동하세요!",
+            "interval": 480,
+            "cycle": ["06:00", "20:00"],
+            "rest": [1, 3, 5],
+            "price": 96000,
+            "limit": 150
+        },
+        {
+            "id": 4,
+            "name": "고속 버스 2번",
+            "description": "먼 이동기간동안 당신의 여행 파트너가 되어줄 고속 버스입니다.",
+            "interval": 20,
+            "cycle": ["06:30", "21:30"],
+            "rest": [1, 2, 5],
+            "price": 12000,
+            "limit": 40
+        },
+        {
+            "id": 5,
+            "name": "레드 버스",
+            "description": "빠르게 이동하고 싶으신가요? 레드 버스를 이용해 주세요",
+            "interval": 15,
+            "cycle": ["07:00", "22:00"],
+            "rest": [0],
+            "price": 15000,
+            "limit": 20
+        },
+        {
+            "id": 6,
+            "name": "블루 버스",
+            "description": "먼 이동거리를 책임질 블루 버스 입니다.",
+            "interval": 30,
+            "cycle": ["05:30", "21:30"],
+            "rest": [2],
+            "price": 20000,
+            "limit": 30
+        },
+        {
+            "id": 7,
+            "name": "옐로우 버스",
+            "description": "소중한 아이들을 위한 버스! 옐로우 버스 입니다.",
+            "interval": 20,
+            "cycle": ["08:00", "22:00"],
+            "rest": [6],
+            "price": 8000,
+            "limit": 30
+        },
+        {
+            "id": 8,
+            "name": "2층 버스",
+            "description": "2층 버스와 함께 즐거운 관광을 즐기세요!",
+            "interval": 25,
+            "cycle": ["06:30", "22:30"],
+            "rest": [2],
+            "price": 15000,
+            "limit": 30
+        },
+        {
+            "id": 9,
+            "name": "마차",
+            "description": "여유있게 즐기고 싶으신 당신을 위해 준비했습니다.",
+            "interval": 40,
+            "cycle": ["09:00", "18:00"],
+            "rest": [2],
+            "price": 27000,
+            "limit": 60
+        },
+        {
+            "id": 10,
+            "name": "리무진",
+            "description": "럭셔리한 관광을 즐기고 싶으신가요? 리무진을 이용해 보세요!",
+            "interval": 60,
+            "cycle": ["05:00", "18:00"],
+            "rest": [2],
+            "price": 120000,
+            "limit": 120
+        },
+        {
+            "id": 11,
+            "name": "헬리콥터",
+            "description": "헬리콥터!",
+            "interval": 120,
+            "cycle": ["08:00", "19:00"],
+            "rest": [2],
+            "price": 67000,
+            "limit": 240
+        },
+        {
+            "id": 12,
+            "name": "KRT",
+            "description": "빠르게 이동시켜주는 기차 입니다.",
+            "interval": 10,
+            "cycle": ["05:00", "23:00"],
+            "rest": [2,5],
+            "price": 90000,
+            "limit": 30
+        },
+        {
+            "id": 13,
+            "name": "우주왕복선",
+            "description": "세계 최초 민간 우주왕복선!",
+            "interval": 480,
+            "cycle": ["08:00", "20:00"],
+            "rest": [2],
+            "price": 760000,
+            "limit": 150
+        },
+        {
+            "id": 14,
+            "name": "크루즈",
+            "description": "엄청 큰 배 입니다.",
+            "interval": 360,
+            "cycle": ["06:30", "20:30"],
+            "rest": [5],
+            "price": 230000,
+            "limit": 120
+        },
+        {
+            "id": 15,
+            "name": "범선",
+            "description": "옛날 배 입니다.",
+            "interval": 240,
+            "cycle": ["09:30", "18:30"],
+            "rest": [5],
+            "price": 25000,
+            "limit": 100
+        }
+    ]
+}

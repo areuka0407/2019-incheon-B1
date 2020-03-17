@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="벡스코">
+    <meta property="og:description" content="벡스코 행사 일정을 한 눈에 알아보거나 행사장을 간편히 예약할 수 있습니다!">
+    <meta property="og:image" content="./images/open-graph.png">
+    <meta property="og:image:width" content="200">
+    <meta property="og:image:height" content="200">
+    <title>Bexco | 벡스코</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <script src="js/common.js"></script>
+</head>
+<body>
+    <!-- HEADER -->
+    <header id="header">
+        <div class="container d-flex justify-content-between align-items-center h-100">
+            <a href="./index.html" class="logo hover-grayscale border-sm-none">
+                <img src="./images/logo.png" alt="벡스코" height="70">
+            </a>
+            <nav id="nav" class="d-sm-none">
+                <div class="nav-item"><a href="./index.html">BEXCO</a></div>
+                <div class="nav-item"><a href="./reservation_placement.html">행사장 임대</a></div>
+                <div class="nav-item"><a href="./reservation_transportation.html">교통편 예약</a></div>
+                <div class="nav-item"><a href="./admin_venue.html">관리자 접속</a></div>
+            </nav>
+            <div class="other fx-n2 d-sm-none">
+                <a id="link-login" href="#" class="px-2">로그인</a>
+                <a id="link-join" href="#" class="px-2 ml-3">회원가입</a>
+            </div>
+            
+            <!-- MOBILE NAV -->
+            <form class="d-none d-sm-block">
+                <input type="checkbox" id="nav-open" hidden>
+                <label for="nav-open" class="mr-3 icon d-none d-sm-block fx-3 position-relative">
+                    <img src="./images/icons/menu.png" alt="메뉴">
+                </label>
+                <div id="m-nav">
+                    <div class="m-nav-inner">
+                        <nav class="nav">
+                            <div class="nav-item hover-opacity"><a href="./index.html">BEXCO</a></div>
+                            <div class="nav-item hover-opacity"><a href="./reservation_placement.html">행사장 임대</a></div>
+                            <div class="nav-item hover-opacity"><a href="./reservation_transportation.html">교통편 예약</a></div>
+                            <div class="nav-item hover-opacity"><a href="./admin_venue.html">관리자 접속</a></div>
+                        </nav>
+                        <div class="other fx-n2 mt-4 fx-2">
+                            <a href="#" class="px-2 hover-opacity">로그인</a>
+                            <a href="#" class="px-2 hover-opacity ml-3">회원가입</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- /MOBILE NAV -->
+        </div>
+    </header>
+    <!-- /HEADER -->
+
+    <!-- VISUAL -->
+    <div id="visual" class="sub-page">
+        <div class="images">
+            <div></div>
+        </div>
+        <div class="visual-contents">
+            <div>
+                <div class="text">
+                    <p>BEXCO > 교통편 예약</p> 
+                    <p class="fx-5 light" lang="en">Transportation <span class="fx-2 bold">Reservation</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /VISUAL -->
+
+    <!-- RESERVE -->
+    <div id="reserve-trasnport">
+        <div class="container padding px-2">
+            <div>
+                <p class="fx-3">교통편 예약 목록</p>
+                <p class="mt-1 light">현재 예약이 가능한 교통편 목록입니다.</p>
+            </div>
+            <div class="transport-table mt-4 w-100">
+                <div class="thead">
+                    <div class="tdata checkbox">선택</div>
+                    <div class="tdata info">교통편</div>
+                    <div class="tdata price">운임 비용</div>
+                    <div class="tdata rest">휴무일</div>
+                    <div class="tdata interval">운행주기</div>
+                    <div class="tdata cycle">운행시간</div>
+                    <div class="tdata status">운행상태</div>
+                </div>
+                <div class="titem">
+                    <div class="tdata checkbox">
+                        <input type="checkbox" id="t-checkbox-1" hidden>
+                        <label for="t-checkbox-1" class="custom-checkbox"></label>
+                    </div>
+                    <div class="tdata info">
+                        <div>
+                            <span class="fx-1 bold text-black">고속 버스 1번</span>
+                            <p class="mt-1 fx-n1">먼 이동기간동안 당신의 여행 파트너가 되어줄 고속 버스입니다</p>
+                        </div>
+                    </div>
+                    <div class="tdata price">￦ 12,000</div>
+                    <div class="tdata rest">일, 수, 토</div>
+                    <div class="tdata interval">30분</div>
+                    <div class="tdata cycle">06:00 ~ 22:00</div>
+                    <div class="tdata status">
+                        <div class="success">운행중</div>
+                    </div>
+                </div>
+                <div class="titem">
+                    <div class="tdata checkbox">
+                        <input type="checkbox" id="t-checkbox-2" hidden>
+                        <label for="t-checkbox-2" class="custom-checkbox"></label>
+                    </div>
+                    <div class="tdata info">
+                        <div>
+                            <span class="fx-1 bold text-black">KTX 관광 에디션</span>
+                            <p class="mt-1 fx-n1">당신의 완벽한 관광을 도와줄 코레일의 관광 파트너, KTX 관광 에디션입니다</p>
+                        </div>
+                    </div>
+                    <div class="tdata price">￦ 78,000</div>
+                    <div class="tdata rest">월, 화</div>
+                    <div class="tdata interval">90분</div>
+                    <div class="tdata cycle">06:00 ~ 20:00</div>
+                    <div class="tdata status">
+                        <div class="success">운행중</div>
+                    </div>
+                </div>
+                <div class="titem disabled">
+                    <div class="tdata checkbox">
+                        <input type="checkbox" id="t-checkbox-3" hidden>
+                        <label for="t-checkbox-3" class="custom-checkbox"></label>
+                    </div>
+                    <div class="tdata info"> 
+                        <div>
+                            <span class="fx-1 bold text-black">Air Busan Festival Edition</span>
+                            <p class="mt-1 fx-n1">럭셔리한 항공편으로 주요 국가 및 주요 도시에서 부산으로 간편하게 이동하세요!</p>
+                        </div>
+                    </div>
+                    <div class="tdata price">￦ 96,000</div>
+                    <div class="tdata rest">월, 수, 금</div>
+                    <div class="tdata interval">480분</div>
+                    <div class="tdata cycle">06:00 ~ 20:00</div>
+                    <div class="tdata status">
+                        <div class="error">
+                            운행 중지
+                        </div>
+                    </div>
+                </div>
+                <div class="titem disabled">
+                    <div class="tdata checkbox">
+                        <input type="checkbox" id="t-checkbox-4" hidden>
+                        <label for="t-checkbox-4" class="custom-checkbox"></label>
+                    </div>
+                    <div class="tdata info">
+                        <div>
+                            <span class="fx-1 bold text-black">고속 버스 2번</span>
+                            <p class="mt-1 fx-n1">먼 이동기간동안 당신의 여행 파트너가 되어줄 고속 버스 입니다.</p>
+                        </div>
+                    </div>
+                    <div class="tdata price">￦ 12,000</div>
+                    <div class="tdata rest">월, 화, 금</div>
+                    <div class="tdata interval">20분</div>
+                    <div class="tdata cycle">06:30 ~ 21:30</div>
+                    <div class="tdata status">
+                        <div class="error">
+                            운행 중지
+                        </div>
+                    </div>
+                </div>
+                <div class="titem disabled">
+                    <div class="tdata checkbox">
+                        <input type="checkbox" id="t-checkbox-5" hidden>
+                        <label for="t-checkbox-5" class="custom-checkbox"></label>
+                    </div>
+                    <div class="tdata info">
+                        <div>
+                            <span class="fx-1 bold text-black">레드 버스</span>
+                            <p class="mt-1 fx-n1">빠르게 이동하고 싶으신가요? 레드 버스를 이용해 주세요</p>
+                        </div>
+                    </div>
+                    <div class="tdata price">￦ 15,000</div>
+                    <div class="tdata rest">일</div>
+                    <div class="tdata interval">15분</div>
+                    <div class="tdata cycle">07:00 ~ 22:00</div>
+                    <div class="tdata status">
+                        <div class="error">
+                            운행 중지
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /RESERVE -->
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="top">
+            <div class="container hx-50 d-flex justify-content-between align-items-center px-2">
+                <div class="d-flex align-items-center fx-n1 text-light justify-content-sm-center h-100">
+                    <div class="nav-item"><a href="./index.html">BEXCO</a></div>
+                    <div class="split"></div>
+                    <div class="nav-item"><a href="./reservation_placement.html">행사장 임대</a></div>
+                    <div class="split"></div>
+                    <div class="nav-item"><a href="./reservation_transportation.html">교통편 예약</a></div>
+                    <div class="split"></div>
+                    <div class="nav-item"><a href="./admin_venue.html">관리자 접속</a></div>
+                </div>
+                <div class="d-flex align-items-center h-100">
+                    <span class="hover-grayscale icon"><img src="./images/socials/Facebook.png" alt=""></span>
+                    <span class="hover-grayscale icon ml-1"><img src="./images/socials/Twitter.png" alt=""></span>
+                    <span class="hover-grayscale icon ml-1"><img src="./images/socials/Tumblr.png" alt=""></span>
+                </div>
+            </div>
+        </div>
+        <div class="container py-2">
+            <div class="d-flex justify-content-between text-light">
+                <div class="left d-flex align-items-center flex-sm-column w-100 px-sm-5">
+                    <img class="filter-whitescale mr-5 mr-sm-0 mb-sm-3" src="./images/logo.png" alt="벡스코" height="60">
+                    <div>
+                        <p class="fx-n3 d-sm-flex flex-wrap justify-content-sm-center">
+                            <span class="mr-2">부산광역시 해운대구 APEC로 55 (우 48060)</span>
+                            <span class="mr-2">TEL. 051-740-7300</span>
+                            <span class="mr-2">FAX. 051-740-7320 </span>
+                            <span>E-mail. bexco@bexco.co.kr</span>
+                        </p>
+                        <p class="fx-n3 mt-1 text-sm-center">Copyright (c) 2013 BEXCO. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- /FOOTER -->
+</body>
+</html>

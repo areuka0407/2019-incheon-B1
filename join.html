@@ -1,0 +1,31 @@
+<div id="join-dialog">
+    <form class="px-2 py-2" action="#" method="post" autocomplete="false">
+        <div class="fx-6 mb-2 text-center text-red bolder" lang="en">
+            SIGN UP
+        </div>
+        <div class="py-2">
+            <label for="join__userid">아이디</label>
+            <p class="text-red fx-n2" hidden>아이디를 입력하세요.</p>
+            <input type="text" id="join__userid" class="form-control" name="identity" placeholder="아이디를 입력하세요">
+        </div>
+        <div class="py-2">
+            <label for="join__password">비밀번호</label>
+            <p class="text-red fx-n2" hidden>비밀번호는 [영문/숫자/특수문자]로 6~20자 이내로 작성되어야 합니다.</p>
+            <input type="password" id="join__password" class="form-control" name="password" placeholder="비밀번호를 입력하세요" autocomplete="false">
+        </div>
+        <div class="py-2">
+            <label for="join__username">이름</label>
+            <p class="text-red fx-n2" hidden>이름은 [한글]로 2~4자 이내로 작성되어야 합니다.</p>
+            <input type="text" id="join__username" class="form-control" name="name" placeholder="이름를 입력하세요">
+        </div>
+        <div class="py-2">
+            <label for="join__phone">전화번호</label>
+            <p class="text-red fx-n2" hidden>전화번호는 [숫자]로만 작성되어야 합니다.</p>
+            <input type="text" id="join__phone" class="form-control" name="phone" placeholder="전화번호를 입력하세요">
+            <input type="text" id="join__preview-phone" class="form-control" readonly>
+        </div> 
+        <div class="py-2">
+            <button class="button w-100">회원가입</button>
+        </div>
+    </form>
+</div>
