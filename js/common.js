@@ -1,7 +1,7 @@
 window.addEventListener("load", async () => {
     // 다이얼 로그 불러오기
     let dialog = {
-        login: await fetch("/login.html")
+        login: await fetch("/dialog__login.html")
                 .then(v => v.text())
                 .then(v => {
                     let dialog = $(v);
@@ -12,7 +12,7 @@ window.addEventListener("load", async () => {
                     });
                     return dialog
                 }),
-        join: await fetch("/join.html")
+        join: await fetch("/dialog__join.html")
                     .then(v => v.text())
                     .then(v => {
                         let dialog = $(v);
@@ -82,4 +82,5 @@ window.addEventListener("load", async () => {
     $("#link-join").on("click", e => {
         dialog.join.dialog("open");
     });
+
 });
