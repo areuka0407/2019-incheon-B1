@@ -103,7 +103,7 @@ window.addEventListener("load", async () => {
         x.addEventListener("click", e => {
             eventDialog.find(".event-name").text(event.name);
             eventDialog.find(".placement-name").text(placement.name);
-            eventDialog.find(".score > img").src = placement.score + ".png";
+            eventDialog.find(".score > img").attr("src", "./images/scores/" + placement.score + ".png");
             eventDialog.find(".score > span").text(placement.score + "점");
             eventDialog.find(".since").text(event.since);
             eventDialog.find(".until").text(event.until);
