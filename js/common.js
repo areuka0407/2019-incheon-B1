@@ -1,3 +1,26 @@
+Date.prototype.parseString = function(){
+    let year = this.getFullYear();
+    let month = this.getMonth() + 1;
+    let date = this.getDate();
+    return `${year}-${month}-${date}`;
+}
+
+String.prototype.time2sec = function(){
+    let matches = this.match(/(?<hour>[0-9]{2}):(?<minute>[0-9]{2})/);
+    let hour = parseInt(matches.groups.hour);
+    let minute = parseInt(matches.groups.minute);
+    return hour * 60 + minute;
+}
+
+Number.prototype.sec2time = function(){
+    let hour = Math.floor(this / 60);
+    let minute = this % 60;
+
+    if(hour < 10) hour = "0" + hour;
+    if(minute < 10) minute = "0" + minute;
+    return `${hour}:${minute}`;
+}
+
 class Ajax {
     static get(url){
         return new Promise(res => {
@@ -7,7 +30,7 @@ class Ajax {
         });
     }
 
-    static getJSON(){
+    static getJSON(url){
         return new Promise(res => {
             fetch(url)
             .then(v => v.json())

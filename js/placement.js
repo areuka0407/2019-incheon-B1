@@ -1,12 +1,5 @@
 let app;
 
-Date.prototype.parseString = function(){
-    let year = this.getFullYear();
-    let month = this.getMonth() + 1;
-    let date = this.getDate();
-    return `${year}-${month}-${date}`;
-}
-
 class App {
     get startDate(){
         return this.dialog.find("#start-date").val();
@@ -33,10 +26,8 @@ class App {
             dayNames: ["일", "월", "화", "수", "목", "금", "토"],
             dayNamesShort: ["일", "월", "화", "수", "목", "금", "토"],
             dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"],
-            showMonthAfterYear: true,
-            changeMonth: true,
-            changeYear: true,
             yearSuffix: "년",
+            showMonthAfterYear:true,
             dateFormat: "yy-mm-dd", 
             beforeShowDay: function(date){
                 if(app.placeId === null) return [false];
