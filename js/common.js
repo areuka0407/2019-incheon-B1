@@ -83,8 +83,11 @@ window.addEventListener("load", async () => {
         let error = false;
 
         let elem__id = $(this).find("#join__userid");
-        if(elem__id.val().trim() === "") elem__id.prev().show();
-        else elem__id.prev().hide();
+        if(elem__id.val().trim() !== "") elem__id.prev().hide();
+        else {
+            elem__id.prev().show();
+            error = true;
+        }
     
         let elem__pw = $(this).find("#join__password");
         let regex__pw = /^(?=.*[a-zA-Z].*)(?=.*[0-9].*)(?=.*[!@#$%^&*\(\)].*)[a-zA-Z0-9!@#$%^&*\(\)]{6,20}$/;
