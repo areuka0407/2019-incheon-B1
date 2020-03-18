@@ -39,7 +39,7 @@ class App {
                 });
                 return [overlap__events];
             },
-            onSelect: function(dateText, inst){
+            onSelect: function(){
                 let timeSelect = app.dialog.find("#reserve-time");
                 let dateSelect = app.dialog.find("#reserve-date");
 
@@ -97,7 +97,7 @@ class App {
             this.dialog.dialog("open");
         });
 
-        // 일자 or 시간 선택시 남은 좌석 수 보여주기
+        // 일자 AND 시간 선택시 남은 좌석 수 보여주기
         let datetimeEvt = e => {
             if(!this.selected || ! dateSelect.val() || ! timeSelect.val()) return;
 
@@ -137,7 +137,7 @@ class App {
         let reserveList = this.reserve__transports.filter(r => r.transportation == id && r.date == date && r.time == time);
 
         return reserveList.reduce((init, reserve) => {
-            let buyCount = reserve.old + reserve.adult + reserve.kids;
+            let buyCount = reserve.member.old + reserve.member.adult + reserve.member.kids;
             return init - buyCount;
         }, limit);
     }
