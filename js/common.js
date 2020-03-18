@@ -1,5 +1,5 @@
 class Ajax {
-    get(url){
+    static get(url){
         return new Promise(res => {
             fetch(url)
             .then(v => v.text())
@@ -7,7 +7,7 @@ class Ajax {
         });
     }
 
-    getJSON(){
+    static getJSON(){
         return new Promise(res => {
             fetch(url)
             .then(v => v.json())
@@ -15,7 +15,7 @@ class Ajax {
         });
     }
 
-    post(url, data = {}){
+    static post(url, data = {}){
         let form = new FormData();
         for(let key in data){
             form.append(key, data[key]);

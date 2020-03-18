@@ -25,10 +25,10 @@
     <!-- HEADER -->
     <header id="header">
         <div class="container d-flex justify-content-between align-items-center h-100">
-            <a href="./index.html" class="logo hover-grayscale border-sm-none">
-                <img src="./images/logo.png" alt="벡스코" height="70">
+            <a href="./index.html" class="logo border-sm-none">
+                <img src="./images/Vlogo.png" alt="벡스코" height="180">
             </a>
-            <nav id="nav" class="d-sm-none">
+            <nav id="nav" class="d-sm-none fx-n1">
                 <div class="nav-item"><a href="./index.html">BEXCO</a></div>
                 <div class="nav-item"><a href="./reservation_placement.html">행사장 임대</a></div>
                 <div class="nav-item"><a href="./reservation_transportation.html">교통편 예약</a></div>
@@ -88,118 +88,60 @@
                 <p class="fx-3">교통편 예약 목록</p>
                 <p class="mt-1 light">현재 예약이 가능한 교통편 목록입니다.</p>
             </div>
-            <div class="transport-table mt-4 w-100">
-                <div class="thead">
-                    <div class="tdata checkbox">선택</div>
-                    <div class="tdata info">교통편</div>
-                    <div class="tdata price">운임 비용</div>
-                    <div class="tdata rest">휴무일</div>
-                    <div class="tdata interval">운행주기</div>
-                    <div class="tdata cycle">운행시간</div>
-                    <div class="tdata status">운행상태</div>
-                </div>
-                <div class="titem">
-                    <div class="tdata checkbox">
-                        <input type="checkbox" id="t-checkbox-1" hidden>
-                        <label for="t-checkbox-1" class="custom-checkbox"></label>
+            <form action="#" method="post">
+                <div class="transport-table mt-4 w-100">
+                    <div class="thead">
+                        <div class="tdata checkbox">선택</div>
+                        <div class="tdata info">교통편</div>
+                        <div class="tdata price">운임 비용</div>
+                        <div class="tdata rest">휴무일</div>
+                        <div class="tdata interval">운행주기</div>
+                        <div class="tdata cycle">운행시간</div>
+                        <div class="tdata status">운행상태</div>
                     </div>
-                    <div class="tdata info">
-                        <div>
-                            <span class="fx-1 bold text-black">고속 버스 1번</span>
-                            <p class="mt-1 fx-n1">먼 이동기간동안 당신의 여행 파트너가 되어줄 고속 버스입니다</p>
+                    <div class="titem position-relative">
+                        <label for="t-checkbox-1" class="position-absolute w-100 h-100 left-0 top-0"></label>
+                        <div class="tdata checkbox">
+                            <input type="radio" id="t-checkbox-1" name="reserve-id" hidden>
+                            <label for="t-checkbox-1" class="custom-checkbox"></label>
+                        </div>
+                        <div class="tdata info">
+                            <div>
+                                <span class="fx-1 bold text-black">고속 버스 1번</span>
+                                <p class="mt-1 fx-n1">먼 이동기간동안 당신의 여행 파트너가 되어줄 고속 버스입니다</p>
+                            </div>
+                        </div>
+                        <div class="tdata price">￦ 12,000</div>
+                        <div class="tdata rest">일, 수, 토</div>
+                        <div class="tdata interval">30분</div>
+                        <div class="tdata cycle">06:00 ~ 22:00</div>
+                        <div class="tdata status">
+                            <div class="success">운행중</div>
                         </div>
                     </div>
-                    <div class="tdata price">￦ 12,000</div>
-                    <div class="tdata rest">일, 수, 토</div>
-                    <div class="tdata interval">30분</div>
-                    <div class="tdata cycle">06:00 ~ 22:00</div>
-                    <div class="tdata status">
-                        <div class="success">운행중</div>
-                    </div>
-                </div>
-                <div class="titem">
-                    <div class="tdata checkbox">
-                        <input type="checkbox" id="t-checkbox-2" hidden>
-                        <label for="t-checkbox-2" class="custom-checkbox"></label>
-                    </div>
-                    <div class="tdata info">
-                        <div>
-                            <span class="fx-1 bold text-black">KTX 관광 에디션</span>
-                            <p class="mt-1 fx-n1">당신의 완벽한 관광을 도와줄 코레일의 관광 파트너, KTX 관광 에디션입니다</p>
+                    <div class="titem disabled">
+                        <div class="tdata checkbox">
+                            <input type="checkbox" id="t-checkbox-5" hidden>
+                            <label for="t-checkbox-5" class="custom-checkbox"></label>
                         </div>
-                    </div>
-                    <div class="tdata price">￦ 78,000</div>
-                    <div class="tdata rest">월, 화</div>
-                    <div class="tdata interval">90분</div>
-                    <div class="tdata cycle">06:00 ~ 20:00</div>
-                    <div class="tdata status">
-                        <div class="success">운행중</div>
-                    </div>
-                </div>
-                <div class="titem disabled">
-                    <div class="tdata checkbox">
-                        <input type="checkbox" id="t-checkbox-3" hidden>
-                        <label for="t-checkbox-3" class="custom-checkbox"></label>
-                    </div>
-                    <div class="tdata info"> 
-                        <div>
-                            <span class="fx-1 bold text-black">Air Busan Festival Edition</span>
-                            <p class="mt-1 fx-n1">럭셔리한 항공편으로 주요 국가 및 주요 도시에서 부산으로 간편하게 이동하세요!</p>
+                        <div class="tdata info">
+                            <div>
+                                <span class="fx-1 bold text-black">레드 버스</span>
+                                <p class="mt-1 fx-n1">빠르게 이동하고 싶으신가요? 레드 버스를 이용해 주세요</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="tdata price">￦ 96,000</div>
-                    <div class="tdata rest">월, 수, 금</div>
-                    <div class="tdata interval">480분</div>
-                    <div class="tdata cycle">06:00 ~ 20:00</div>
-                    <div class="tdata status">
-                        <div class="error">
-                            운행 중지
+                        <div class="tdata price">￦ 15,000</div>
+                        <div class="tdata rest">일</div>
+                        <div class="tdata interval">15분</div>
+                        <div class="tdata cycle">07:00 ~ 22:00</div>
+                        <div class="tdata status">
+                            <div class="error">
+                                운행 중지
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="titem disabled">
-                    <div class="tdata checkbox">
-                        <input type="checkbox" id="t-checkbox-4" hidden>
-                        <label for="t-checkbox-4" class="custom-checkbox"></label>
-                    </div>
-                    <div class="tdata info">
-                        <div>
-                            <span class="fx-1 bold text-black">고속 버스 2번</span>
-                            <p class="mt-1 fx-n1">먼 이동기간동안 당신의 여행 파트너가 되어줄 고속 버스 입니다.</p>
-                        </div>
-                    </div>
-                    <div class="tdata price">￦ 12,000</div>
-                    <div class="tdata rest">월, 화, 금</div>
-                    <div class="tdata interval">20분</div>
-                    <div class="tdata cycle">06:30 ~ 21:30</div>
-                    <div class="tdata status">
-                        <div class="error">
-                            운행 중지
-                        </div>
-                    </div>
-                </div>
-                <div class="titem disabled">
-                    <div class="tdata checkbox">
-                        <input type="checkbox" id="t-checkbox-5" hidden>
-                        <label for="t-checkbox-5" class="custom-checkbox"></label>
-                    </div>
-                    <div class="tdata info">
-                        <div>
-                            <span class="fx-1 bold text-black">레드 버스</span>
-                            <p class="mt-1 fx-n1">빠르게 이동하고 싶으신가요? 레드 버스를 이용해 주세요</p>
-                        </div>
-                    </div>
-                    <div class="tdata price">￦ 15,000</div>
-                    <div class="tdata rest">일</div>
-                    <div class="tdata interval">15분</div>
-                    <div class="tdata cycle">07:00 ~ 22:00</div>
-                    <div class="tdata status">
-                        <div class="error">
-                            운행 중지
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
     <!-- /RESERVE -->

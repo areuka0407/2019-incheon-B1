@@ -6,7 +6,7 @@ class App {
     }
     
     async init(){
-        this.events = await this.getEvents();
+        this.events = await 
     }
 
     
