@@ -1,3 +1,33 @@
+class Ajax {
+    get(url){
+        return new Promise(res => {
+            fetch(url)
+            .then(v => v.text())
+            .then(v => res(v));
+        });
+    }
+
+    getJSON(){
+        return new Promise(res => {
+            fetch(url)
+            .then(v => v.json())
+            .then(v => res(v));
+        });
+    }
+
+    post(url, data = {}){
+        let form = new FormData();
+        for(let key in data){
+            form.append(key, data[key]);
+        }
+        return new Promise(res => {
+            fetch(new Request(url, form))
+            .then(v => v.json())
+            .then(v => res(v));
+        });
+    }
+}
+
 window.addEventListener("load", async () => {
     // 다이얼 로그 불러오기
     let dialog = {
