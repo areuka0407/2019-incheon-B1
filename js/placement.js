@@ -1,4 +1,20 @@
+let app;
+
+Date.prototype.parseString = function(){
+    let year = this.getFullYear();
+    let month = this.getMonth() + 1;
+    let date = this.getDate();
+    return `${year}-${month}-${date}`;
+}
+
 class App {
+    get startDate(){
+        return this.dialog.find("#start-date").val();
+    }
+    get endDate(){
+        return this.dialog.find("#end-date").val();
+    }
+
     constructor(){
         this.init();
     }
@@ -6,6 +22,55 @@ class App {
     async init(){
         this.placements = await this.getPlacements();
         this.reservations = await this.getReservation();
+
+        this.placeId = null;
+
+        this.pickerOption = {
+            prevText: "이전 달",
+            nextText: "다음 달",
+            monthNames: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+            monthNamesShort: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
+            dayNames: ["일", "월", "화", "수", "목", "금", "토"],
+            dayNamesShort: ["일", "월", "화", "수", "목", "금", "토"],
+            dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"],
+            showMonthAfterYear: true,
+            changeMonth: true,
+            changeYear: true,
+            yearSuffix: "년",
+            dateFormat: "yy-mm-dd", 
+            beforeShowDay: function(date){
+                if(app.placeId === null) return [false];
+
+                let placement = app.placements.find(place => place.id == app.placeId);
+                let hasEvents = app.reservations.filter(evt => evt.placement == app.placeId);
+    
+                let overlap__events = !hasEvents.reduce((prev, current) => {
+                    let isOverlap = new Date(current.since) <= date && date <= new Date(current.until);
+                    return prev || isOverlap;
+                }, false)
+                
+                let overlap__rest = !placement.rest.includes( date.getDay() );
+
+                
+                let overlap__startDate = app.startDate.trim() !== "" && this.id !== "start-date" ? date > new Date(app.startDate) : true;
+                let overlap__endDate = app.endDate.trim() !== "" && this.id !== "end-date" ? date < new Date(app.endDate) : true;
+                
+    
+                return [overlap__events && overlap__rest && overlap__startDate && overlap__endDate];
+            },
+        };
+
+
+        this.dialog = $("#dialog-reservation");
+        this.dialog.dialog({
+            autoOpen: false,
+            resizable: false,
+            width: 500,
+            close: function(){
+                $(this).find("#start-date").val('');
+                $(this).find("#end-date").val('');
+            }
+        });
 
         this.setPlacement();
         this.setEvent();
@@ -43,7 +108,7 @@ class App {
     }
 
     setEvent(){
-        $("body").on("submit", "#dialog-reservation", function(){
+        this.dialog.find("form").on("submit", function(e){
             e.preventDefault();
 
             if(this.querySelector("#event-image").files.length === 0){
@@ -55,44 +120,14 @@ class App {
         });
 
         $("#reserve-placement .list").on("click", ".item", async e => {
-            let dialog = await this.getDialog();
-
             let target = e.currentTarget || e.target;
-            let placeId = parseInt(target.dataset.id);
+            this.placeId = parseInt(target.dataset.id);
 
-            let invalidDate = (date) => {
-                let placement = this.placements.find(place => place.id == placeId);
-                let hasEvents = this.reservations.filter(evt => evt.placement == placeId);
-
-                let overlap__events = hasEvents.reduce((prev, current) => {
-                    let isOverlap = new Date(current.since) <= date && date <= new Date(current.until);
-                    return prev || isOverlap;
-                }, false)
-                
-                let overlap__rest = !placement.rest.includes( date.getDay() );
-
-                return [overlap__events || overlap__rest];
-            };
-
-            let pickerOption = {
-                prevText: "이전 달",
-                nextText: "다음 달",
-                monthNames: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
-                monthNamesShort: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
-                dayNames: ["일", "월", "화", "수", "목", "금", "토"],
-                dayNamesShort: ["일", "월", "화", "수", "목", "금", "토"],
-                dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"],
-                showMonthAfterYear: true,
-                changeMonth: true,
-                changeYear: true,
-                yearSuffix: "년",
-                dateFormat: "yy-mm-dd", 
-                beforeShowDay: invalidDate
-            };
-            let startDate = dialog.find("#start-date");
-            let endDate = dialog.find("#end-date");
-            startDate.datepicker(pickerOption);
-            endDate.datepicker(pickerOption);
+            
+            let startDate = this.dialog.find("#start-date");
+            let endDate = this.dialog.find("#end-date");
+            startDate.datepicker(this.pickerOption);
+            endDate.datepicker(this.pickerOption);
 
             startDate.on("input", e => {
                 console.log(e.target.value);
@@ -101,23 +136,7 @@ class App {
                 console.log(e.target.value);
             });
         
-            dialog.dialog("open");
-        });
-    }
-
-    getDialog(){
-        return new Promise(res => {
-            fetch("./dialog__reservation.html")
-            .then(v => v.text())
-            .then(v => {
-                let dialogElem = $(v);
-                dialogElem.dialog({
-                    autoOpen: false,
-                    resizable: false,
-                    width: 500
-                });
-                res(dialogElem);
-            });
+            this.dialog.dialog("open");
         });
     }
 
@@ -141,5 +160,5 @@ class App {
 }
 
 window.addEventListener("load", e => {
-    let app = new App();
+    app = new App();
 });
