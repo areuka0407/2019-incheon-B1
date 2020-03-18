@@ -81,10 +81,11 @@ class App {
 
             let transport = this.transports.find(x => x.id == this.selected);
             this.dialog.find("#reserve-transport").val(`${transport.name}`);
+            this.dialog.find("#reserve-date").datepicker("setDate", "");
             this.dialog.find(".limit").text('0');
 
             let [startTime, endTime] = transport.cycle;
-            timeSelect.html("<option value>예약 일자를 먼저 선택하세요.</option>");
+            timeSelect.html("");
             
             for(let i = startTime.time2sec(); i < endTime.time2sec(); i += transport.interval){
                 let optionElem = $(`<option vlaue="${i}">${i.sec2time()}</option>`)[0];
@@ -115,7 +116,23 @@ class App {
         // 폼 전송 이벤트
         this.dialog.find("form").on("submit", e => {
             e.preventDefault();
+            let child = this.dialog.find("#cnt-child");
+            let adult = this.dialog.find("#cnt-adult");
+            let old = this.dialog.find("#cnt-old");
 
+            // 데이터 확인
+            let isEmpty = child.spinner("value") + adult.spinner("value") + old.spinner("value") === 0
+                            || !this.dialog.find("#reserve-date").val()
+                            || !this.dialog.find("#reserve-time").val();
+            if(isEmpty) return alert("입력 정보가 잘못되었습니다.");
+            
+
+            // 구매 가능 개수 확인
+            let seatCnt = this.getLeaveSeat({id: this.selected, date: dateSelect.val(), time: timeSelect.val()});
+            let buyCnt  = child.spinner("value")
+                        + adult.spinner("value")
+                        + old.spinner("value");
+            if(seatCnt < buyCnt) return alert("인원이 너무 많습니다.");
             alert("결제가 진행되었습니다.");
         });
 
